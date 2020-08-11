@@ -4,11 +4,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="formscripts.js"></script>
     <title>Delicious Cakes</title>
   </head>
   <body>
     <header>
-      <h1 class="logo">Delicious Cakes</h1>
+      <h1 class="logo"><a href="index.html">Delicious Cakes</a></h1>
       <nav>
         <ul class="navigation">
           <li>
@@ -47,11 +48,18 @@
           </div>
           <div class="form-box">
             <label for="city">City </label>
-            <input type="text" id="city" name="city" />
+            <input id="city" name="city" list="city"/>
+            <datalist id="city">
+              <option value="Edge">
+              <option value="Firefox">
+              <option value="Chrome">
+              <option value="Opera">
+              <option value="Safari">
+            </datalist>
           </div>
           <div class="form-box">
             <label for="postalCode">Postal Code </label>
-            <input type="text" id="postalCode" name="postalCode" />
+            <input type="text" id="postalCode" name="postalCode" pattern="^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
           </div>
         </div>
         <div class="form-box">
@@ -72,8 +80,13 @@
               <input type="radio" name="formTopic" id="formTopic-2" value="Comment" /> Comment
             </li>
             <li>
-              <input type="radio" name="formTopic" id="formTopic-3" value="Order Problem" /> Order
+              <input type="radio" name="formTopic" id="formTopic-3" value="Order Problem"/> Order
               Problem
+              <ul>
+                <li>
+                  <input type="text" id="orderNumber" name="orderNumber" placeholder="Order Number" class="hidden">
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -87,6 +100,9 @@
             method="post"
           >
           </textarea>
+        </div>
+        <div class="form-box">
+          <input type="hidden" id="hiddenName" name="hiddenName" value="Benson Li"/>
         </div>
         <div>
           <button id="btnSend" class="formSubmitBtn" type="submit">Send</button>
@@ -117,7 +133,7 @@
           method="POST"
         >
           <div class="subscribe-form-box">
-            <input type="email" id="subscribeEmail" name="subscribeEmail" class="subscribeEmail" />
+            <input type="email" id="subscribeEmail" name="subscribeEmail" class="subscribeEmail" placeholder="Email Address" />
             <button id="subscribe" class="subscribeBtn" type="submit">Subscribe</button>
           </div>
         </form>
