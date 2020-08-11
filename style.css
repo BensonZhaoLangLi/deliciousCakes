@@ -425,13 +425,6 @@ button {
   font-family: 'Mulish';
 }
 
-.form-box input,
-.form-box button,
-.form-box textarea {
-  flex-basis: 100%;
-  font-family: 'Mulish';
-}
-
 .form-box-column {
   list-style: none;
   justify-content: space-between;
