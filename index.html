@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./product-data.js"></script>
+    <script src="./script.js"></script>
+    <title>Delicious Cakes</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">Delicious Cakes</h1>
+      <nav>
+        <ul class="navigation">
+          <li>
+            <button onClick="location.href='./contactus.html'">
+              Contact Us
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <hr />
+    <div class="btnContainer">
+      <div id="btnContainerInner" class="btnContainerInner">
+        <button id="btnAll" class="btn active">Show all</button>
+        <button id="btnCakes" class="btn">Cakes</button>
+        <button id="btnCupcakes" class="btn">Cupcakes</button>
+      </div>
+    </div>
+    <div id="productContainer" class="itmContainer"><!--Product boxes added using DOM--></div>
+
+    <div id="enlargedProduct" class="modal">
+      <!--Pop-up appears when an image is clicked-->
+      <span class="close">&times;</span>
+      <img
+        class="modal-content"
+        id="largeImage"
+        alt="modal image"
+        src="./images/iconmonstr-facebook-4-240.png"
+      />
+      <p id="caption" class="caption"></p>
+    </div>
+    <footer>
+      <div class="socialMediaLink">
+        <p>Connect with us!</p>
+        <a href="https://twitter.com"
+          ><img src="./images/iconmonstr-twitter-1-240.png" class="socialMedia" alt="twitter icon"
+        /></a>
+        <a href="https://facebook.com"
+          ><img src="./images/iconmonstr-facebook-4-240.png" class="socialMedia" alt="facebook icon"
+        /></a>
+        <a href="https://instagram.com"
+          ><img
+            src="./images/iconmonstr-instagram-13-240.png"
+            class="socialMedia"
+            alt="instagram icon"
+        /></a>
+        <a href="https://youtube.com"
+          ><img src="./images/iconmonstr-youtube-6-240.png" class="socialMedia" alt="youtube icon"
+        /></a>
+      </div>
+      <div class="subscribeFormContainer">
+        <form
+          id="subscribeForm"
+          name="subscribeForm"
+          action="http://httpbin.org/post"
+          method="POST"
+        >
+          <div class="subscribe-form-box">
+            <input type="email" id="subscribeEmail" name="subscribeEmail" class="subscribeEmail" />
+            <button id="subscribe" class="subscribeBtn" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </footer>
+
+    <!-- END MAIN -->
+  </body>
+</html>

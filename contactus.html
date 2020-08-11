@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>Delicious Cakes</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo">Delicious Cakes</h1>
+      <nav>
+        <ul class="navigation">
+          <li>
+            <button onClick="location.href='./contactus.html'">Contact Us</button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="formContainer">
+      <div class="formDescription">
+        <h1 class="title">Get in touch with us</h1>
+        <p>
+          Have a question or comment? Leave a message and we will provide assistance as soon as
+          possible.
+        </p>
+      </div>
+      <form id="contactForm" name="contactForm" action="http://httpbin.org/post" method="POST">
+        <div class="form-box-names">
+          <div class="form-box">
+            <label for="firstName">First Name </label>
+            <input type="text" id="firstName" name="firstName" />
+          </div>
+          <div class="form-box">
+            <label for="lastName">Last Name </label>
+            <input type="text" id="lastName" name="lastName" />
+          </div>
+        </div>
+        <div class="form-box">
+          <label for="email">Email </label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div class="form-box-addresses">
+          <div class="form-box">
+            <label for="address">Address </label>
+            <input type="text" id="address" name="address" />
+          </div>
+          <div class="form-box">
+            <label for="city">City </label>
+            <input type="text" id="city" name="city" />
+          </div>
+          <div class="form-box">
+            <label for="postalCode">Postal Code </label>
+            <input type="text" id="postalCode" name="postalCode" />
+          </div>
+        </div>
+        <div class="form-box">
+          <label for="phoneNumber">Phone Number </label>
+          <input type="text" id="phoneNumber" name="phoneNumber" />
+        </div>
+        <div class="form-box-checkbox">
+          <label for="phoneBool">Would you like to be called?</label>
+          <input type="checkbox" id="phoneBool" name="phoneBool" />
+        </div>
+        <div class="form-box-column">
+          <ul>
+            Topic
+            <li>
+              <input type="radio" name="formTopic" id="formTopic-1" value="Question" /> Question
+            </li>
+            <li>
+              <input type="radio" name="formTopic" id="formTopic-2" value="Comment" /> Comment
+            </li>
+            <li>
+              <input type="radio" name="formTopic" id="formTopic-3" value="Order Problem" /> Order
+              Problem
+            </li>
+          </ul>
+        </div>
+        <div class="form-box">
+          <textarea
+            id="contactForm"
+            rows="5"
+            cols="80"
+            name="contactForm"
+            form="contactForm"
+            method="post"
+          >
+          </textarea>
+        </div>
+        <div>
+          <button id="btnSend" class="formSubmitBtn" type="submit">Send</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="socialMediaLink">
+        <p>Connect with us!</p>
+        <a href="https://twitter.com"
+          ><img src="./images/iconmonstr-twitter-1-240.png" class="socialMedia"
+        /></a>
+        <a href="https://facebook.com"
+          ><img src="./images/iconmonstr-facebook-4-240.png" class="socialMedia"
+        /></a>
+        <a href="https://instagram.com"
+          ><img src="./images/iconmonstr-instagram-13-240.png" class="socialMedia"
+        /></a>
+        <a href="https://youtube.com"
+          ><img src="./images/iconmonstr-youtube-6-240.png" class="socialMedia"
+        /></a>
+      </div>
+      <div class="subscribeFormContainer">
+        <form
+          id="subscribeForm"
+          name="subscribeForm"
+          action="http://httpbin.org/post"
+          method="POST"
+        >
+          <div class="subscribe-form-box">
+            <input type="email" id="subscribeEmail" name="subscribeEmail" class="subscribeEmail" />
+            <button id="subscribe" class="subscribeBtn" type="submit">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </footer>
+
+    <!-- END MAIN -->
+  </body>
+</html>
