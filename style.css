@@ -410,12 +410,6 @@ button {
   }
 }
 
-.form-box-names,
-.form-box-addresses {
-  display: flex;
-  flex-wrap: wrap;
-}
-
 .form-box {
   flex-wrap: wrap;
   display: flex;
