@@ -247,8 +247,6 @@ window.onload = function() {
         errorMsg.innerHTML = '*Order number must only contain numbers.';
         return false;
       }
-
-      return true;
     }
     //Validation for message: -is required
     var message = contactForm.message.value.trim();
@@ -259,5 +257,7 @@ window.onload = function() {
       contactForm.message.focus();
       return false;
     }
+
+    return true;
   };
 };
