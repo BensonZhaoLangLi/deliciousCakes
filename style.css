@@ -24,7 +24,7 @@ header {
 }
 
 /*logo sizes for different screen sizes*/
-@media (min-width: 510px) { 
+@media (min-width: 510px) {
   header h1 {
     font-size: 42px;
     height: 100%;
@@ -32,25 +32,31 @@ header {
     color: #f5efef;
   }
 
-  button {
+  .navigation button {
     padding: 5px 10px;
   }
 }
 
 @media (max-width: 510px) {
   header h1 {
-    font-size: 30px;
+    font-size: 6.7vw;
     height: 100%;
     font-family: 'Dancing Script', cursive;
     color: #f5efef;
   }
+
+  .navigation button {
+    padding: 5px 10px;
+    font-size: 2.5vw;
+  }
 }
 
-.logo a{
+.logo a {
   text-decoration: none;
   color: inherit;
 }
 .navigation {
+  display: flex;
   list-style: none;
 }
 
@@ -61,7 +67,7 @@ header {
 
 .navigation li button {
   cursor: pointer;
-  padding: 9px 25px;
+  padding: 5px 25px;
   background-color: #086972;
   color: white;
   border: none;
@@ -412,7 +418,6 @@ button {
 @media (max-width: 915px) {
   .form-box-names,
   .form-box-addresses {
-    color: #810000;
     flex-basis: 50%;
     flex-direction: column;
     justify-content: space-between;
@@ -474,7 +479,7 @@ textarea {
   flex-shrink: 2;
 }
 
-.subscribe-form-box input{
+.subscribe-form-box input {
   border-radius: 25px;
   padding: 5px 25px;
   border: none;
@@ -495,4 +500,19 @@ textarea {
   width: auto;
   height: 100%;
   max-height: 26px;
+}
+
+@media(max-width:580px){
+  .subscribeBtn {
+    cursor: pointer;
+    background-color: #ff5f40;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Mulish';
+    width: auto;
+    height: 100%;
+    max-height: 26px;
 }

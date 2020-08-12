@@ -26,15 +26,21 @@
           possible.
         </p>
       </div>
-      <form id="contactForm" name="contactForm" action="http://httpbin.org/post" method="POST">
+      <form
+        id="contactForm"
+        name="contactForm"
+        action="http://httpbin.org/post"
+        method="POST"
+        onsubmit="return validateForm();"
+      >
         <div class="form-box-names">
           <div class="form-box">
             <label for="firstName">First Name </label>
-            <input type="text" id="firstName" name="firstName" />
+            <input type="text" id="firstName" name="firstName" maxlength="50" required />
           </div>
           <div class="form-box">
             <label for="lastName">Last Name </label>
-            <input type="text" id="lastName" name="lastName" />
+            <input type="text" id="lastName" name="lastName" required />
           </div>
         </div>
         <div class="form-box">
@@ -47,19 +53,34 @@
             <input type="text" id="address" name="address" />
           </div>
           <div class="form-box">
-            <label for="city">City </label>
-            <input id="city" name="city" list="city"/>
-            <datalist id="city">
-              <option value="Edge">
-              <option value="Firefox">
-              <option value="Chrome">
-              <option value="Opera">
-              <option value="Safari">
+            <label for="browser">City</label>
+            <input list="browsers" name="browser" id="browser" />
+            <datalist id="browsers">
+              <option value="Toronto"> </option>
+              <option value="Montreal"> </option>
+              <option value="Calgary"> </option>
+              <option value="Ottawa"> </option>
+              <option value="Edmonton"> </option>
+              <option value="Mississauga"> </option>
+              <option value="Winnipeg"> </option>
+              <option value="Vancouver"> </option>
+              <option value="Brampton"> </option>
+              <option value="Hamilton"> </option>
+              <option value="Quebec City"> </option>
+              <option value="Surrey"> </option>
+              <option value="Laval"> </option>
+              <option value="Halifax"> </option>
+              <option value="London"> </option>
             </datalist>
           </div>
           <div class="form-box">
             <label for="postalCode">Postal Code </label>
-            <input type="text" id="postalCode" name="postalCode" pattern="^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"/>
+            <input
+              type="text"
+              id="postalCode"
+              name="postalCode"
+              pattern="^(?!.*[DFIOQU])[A-VXY][0-9][A-Z] ?[0-9][A-Z][0-9]$"
+            />
           </div>
         </div>
         <div class="form-box">
@@ -80,29 +101,35 @@
               <input type="radio" name="formTopic" id="formTopic-2" value="Comment" /> Comment
             </li>
             <li>
-              <input type="radio" name="formTopic" id="formTopic-3" value="Order Problem"/> Order
+              <input type="radio" name="formTopic" id="formTopic-3" value="Order Problem" /> Order
               Problem
               <ul>
                 <li>
-                  <input type="text" id="orderNumber" name="orderNumber" placeholder="Order Number" class="hidden">
+                  <input
+                    type="text"
+                    id="orderNumber"
+                    name="orderNumber"
+                    placeholder="Order Number"
+                    class="hidden"
+                  />
                 </li>
               </ul>
             </li>
           </ul>
         </div>
         <div class="form-box">
+          <label for="message">Message</label>
           <textarea
-            id="contactForm"
+            id="message"
             rows="5"
             cols="80"
-            name="contactForm"
+            name="message"
             form="contactForm"
             method="post"
-          >
-          </textarea>
+          ></textarea>
         </div>
         <div class="form-box">
-          <input type="hidden" id="hiddenName" name="hiddenName" value="Benson Li"/>
+          <input type="hidden" id="hiddenName" name="hiddenName" value="Benson Li" />
         </div>
         <div>
           <button id="btnSend" class="formSubmitBtn" type="submit">Send</button>
@@ -129,11 +156,18 @@
         <form
           id="subscribeForm"
           name="subscribeForm"
-          action="http://httpbin.org/post"
+          action="https://formspree.io/xrgydlor"
           method="POST"
         >
           <div class="subscribe-form-box">
-            <input type="email" id="subscribeEmail" name="subscribeEmail" class="subscribeEmail" placeholder="Email Address" />
+            <input
+              type="email"
+              id="subscribeEmail"
+              name="subscribeEmail"
+              class="subscribeEmail"
+              placeholder="Email Address"
+              required
+            />
             <button id="subscribe" class="subscribeBtn" type="submit">Subscribe</button>
           </div>
         </form>
