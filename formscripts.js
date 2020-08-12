@@ -152,8 +152,6 @@ window.onload = function() {
       }
     }
 
-    console.log(invalidSymbols);
-
     if (alphaCount < 2 && invalidSymbols == true) {
       document.contactForm.city.classList.add('error');
       errorMsg.innerHTML =
@@ -214,15 +212,12 @@ window.onload = function() {
 
     /*validation for formTopic: -a form topic value must be selected*/
     var formTopicCheck = false;
-    console.log(contactForm.formTopic[1].checked);
 
     for (i = 0; i < 3; i++) {
       if (contactForm.formTopic[i].checked) {
         formTopicCheck = true;
       }
     }
-
-    console.log(formTopicCheck);
 
     if (formTopicCheck === false) {
       errorMsg.innerHTML = '*Topic of message must be selected.';
@@ -238,9 +233,6 @@ window.onload = function() {
         errorMsg.innerHTML = '*Order number is required.';
         return false;
       }
-
-      console.log(parseInt(orderNo));
-      console.log(orderNo);
 
       if (parseInt(orderNo) != orderNo) {
         document.contactForm.orderNumber.classList.add('error');
