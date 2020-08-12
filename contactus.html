@@ -34,21 +34,21 @@
           </div>
           <div class="form-box">
             <label for="lastName">Last Name </label>
-            <input type="text" id="lastName" name="lastName" />
+            <input type="text" id="lastName" name="lastName" maxlength="50" />
           </div>
         </div>
         <div class="form-box">
           <label for="email">Email </label>
-          <input type="email" id="email" name="email" />
+          <input type="text" id="email" name="email" maxlength="255" />
         </div>
         <div class="form-box-addresses">
           <div class="form-box">
             <label for="address">Address </label>
-            <input type="text" id="address" name="address" maxlength="80" />
+            <input type="text" id="address" name="address" maxlength="100" />
           </div>
           <div class="form-box">
-            <label for="browser">City</label>
-            <input list="browsers" name="browser" id="browser" />
+            <label for="city">City</label>
+            <input list="browsers" name="city" id="city" maxlength="85" />
             <datalist id="browsers">
               <option value="Toronto"> </option>
               <option value="Montreal"> </option>
@@ -69,7 +69,7 @@
           </div>
           <div class="form-box">
             <label for="postalCode">Postal Code </label>
-            <input type="text" id="postalCode" name="postalCode" />
+            <input type="text" id="postalCode" name="postalCode" maxlength="7" />
           </div>
         </div>
         <div class="form-box">
@@ -81,8 +81,8 @@
           <input type="checkbox" id="phoneBool" name="phoneBool" />
         </div>
         <div class="form-box-column">
-          <ul>
-            Topic
+          <ul id="formTopicList">
+            <p>Topic</p>
             <li>
               <input type="radio" name="formTopic" id="formTopic-1" value="Question" />
               Question
@@ -121,8 +121,9 @@
         <div class="form-box">
           <input type="hidden" id="hiddenName" name="hiddenName" value="Benson Li" />
         </div>
-        <div>
+        <div class="contactFormBtnContainer">
           <button id="btnSend" class="formSubmitBtn" type="submit">Send</button>
+          <button id="btnClear" class="formClearBtn" type="reset">Clear</button>
         </div>
       </form>
       <div id="error" class="errorMessage"></div>

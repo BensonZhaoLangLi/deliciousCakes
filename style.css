@@ -23,34 +23,6 @@ header {
   background-color: #810000;
 }
 
-/*logo sizes for different screen sizes*/
-@media (min-width: 510px) {
-  header h1 {
-    font-size: 42px;
-    height: 100%;
-    font-family: 'Dancing Script', cursive;
-    color: #f5efef;
-  }
-
-  .navigation button {
-    padding: 5px 10px;
-  }
-}
-
-@media (max-width: 510px) {
-  header h1 {
-    font-size: 6.7vw;
-    height: 100%;
-    font-family: 'Dancing Script', cursive;
-    color: #f5efef;
-  }
-
-  .navigation button {
-    padding: 5px 10px;
-    font-size: 2.5vw;
-  }
-}
-
 .logo a {
   text-decoration: none;
   color: inherit;
@@ -65,15 +37,45 @@ header {
   padding: 0px 20px;
 }
 
-.navigation li button {
-  cursor: pointer;
-  padding: 5px 25px;
-  background-color: #086972;
-  color: white;
-  border: none;
-  border-radius: 50px;
-  text-decoration: none;
-  font-family: 'Mulish';
+/*logo sizes for different screen sizes*/
+@media (min-width: 510px) {
+  header h1 {
+    font-size: 42px;
+    height: 100%;
+    font-family: 'Dancing Script', cursive;
+    color: #f5efef;
+  }
+  .navigation li button {
+    cursor: pointer;
+    padding: 9px 25px;
+    background-color: #086972;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Mulish';
+  }
+}
+
+@media (max-width: 510px) {
+  header h1 {
+    font-size: 8vw;
+    height: 100%;
+    font-family: 'Dancing Script', cursive;
+    color: #f5efef;
+  }
+
+  .navigation li button {
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 2.5vw;
+    background-color: #086972;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Mulish';
+  }
 }
 
 .btnBox .navigation li button {
@@ -361,7 +363,7 @@ footer {
   margin-top: auto;
   align-items: center;
   padding: 20px 10%;
-  background-color: #810000;
+  background-color: #581c0c; /*alternate color #581c0c #810000*/
   font-family: 'Mulish';
   color: #f5efef;
 }
@@ -476,12 +478,27 @@ textarea {
   width: 100%;
 }
 
+.contactFormBtnContainer {
+  display: flex;
+}
 .formSubmitBtn {
   padding: 9px 25px;
   background-color: #ff5f40;
   color: white;
   border: none;
   border-radius: 50px;
+  margin-right: 10px;
+  text-decoration: none;
+  font-family: 'Mulish';
+}
+
+.formClearBtn {
+  padding: 9px 25px;
+  background-color: #40a3ff;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  max-width: 81.35px;
   text-decoration: none;
   font-family: 'Mulish';
 }
