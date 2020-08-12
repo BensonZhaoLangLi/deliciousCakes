@@ -24,9 +24,13 @@ window.onload = function() {
   contactForm.onsubmit = function() {
     //remove error style on all input boxes, previously invalid input boxes will no longer be highlighted
     var inputBoxes = document.contactForm.getElementsByTagName('input');
+    var textAreaInput = document.contactForm.getElementsByTagName('textarea');
+
     for (var i = 0; i < inputBoxes.length; i++) {
       inputBoxes[i].classList.remove('error');
     }
+    textAreaInput[0].classList.remove('error');
+
     //validation for first name: -is required -must only contain alphabet or hyphen(-)
     var validNameChars = true;
     var firstName = contactForm.firstName.value.trim();
@@ -87,6 +91,26 @@ window.onload = function() {
       contactForm.lastName.focus();
       return false;
     }
+
+    //Validation for email address: -is required -must follow proper email format
+    var emailAddress = document.contactForm.email.value.trim();
+    var emailAddressRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //regex sourced from https://html5-tutorial.net/form-validation/validating-email/
+
+    if (emailAddress == '') {
+      document.contactForm.email.classList.add('error');
+      errorMsg.innerHTML = '*Email address is required.';
+      contactForm.email.focus();
+      return false;
+    }
+    //test if regex matches input
+    if (!emailAddressRegex.test(emailAddress)) {
+      document.contactForm.email.classList.add('error');
+      errorMsg.innerHTML =
+        '*Invalid email address format. Format should be: example@exampledomain.com';
+      contactForm.email.focus();
+      return false;
+    }
+
     //Validation for address: -is required
     var address = contactForm.address.value.trim();
 
@@ -146,27 +170,8 @@ window.onload = function() {
     if (invalidSymbols == true) {
       document.contactForm.city.classList.add('error');
       errorMsg.innerHTML =
-        "*Invalid city name. Must contain only letters or valid symbols: ( . )( ' )( , )( - )";
+        "*Invalid city name. Must contain only letters or valid symbols: ( . )( ' )( , )( - )( space )";
       contactForm.city.focus();
-      return false;
-    }
-
-    //Validation for email address: -is required -must follow proper email format
-    var emailAddress = document.contactForm.email.value.trim();
-    var emailAddressRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; //regex sourced from https://html5-tutorial.net/form-validation/validating-email/
-
-    if (emailAddress === '') {
-      document.contactForm.email.classList.add('error');
-      errorMsg.innerHTML = '*Email address is required.';
-      contactForm.email.focus();
-      return false;
-    }
-    //test if regex matches input
-    if (!emailAddressRegex.test(emailAddress)) {
-      document.contactForm.email.classList.add('error');
-      errorMsg.innerHTML =
-        '*Invalid email address format. Format should be: example@exampledomain.com';
-      contactForm.email.focus();
       return false;
     }
 
@@ -188,7 +193,24 @@ window.onload = function() {
       contactForm.postalCode.focus();
       return false;
     }
-    /*validation for phone number*/
+    /*validation for phone number: -is required -must not contain letters -must be valid Canadian phone number format*/
+    var phoneNumber = contactForm.phoneNumber.value.trim();
+    var phoneNumberRegex = /^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$/;
+
+    if (phoneNumber === '') {
+      document.contactForm.phoneNumber.classList.add('error');
+      errorMsg.innerHTML = '*Phone number is required.';
+      contactForm.phoneNumber.focus();
+      return false;
+    }
+
+    if (!phoneNumberRegex.test(phoneNumber)) {
+      document.contactForm.phoneNumber.classList.add('error');
+      errorMsg.innerHTML =
+        '*Invalid Canadian phone number. Valid examples: 1234567890, 123-456-7890, 123.456.7890, 123 456 7890, (123) 456 7890';
+      contactForm.phoneNumber.focus();
+      return false;
+    }
 
     /*validation for formTopic: -a form topic value must be selected*/
     var formTopicCheck = false;
@@ -227,6 +249,15 @@ window.onload = function() {
       }
 
       return true;
+    }
+    //Validation for message: -is required
+    var message = contactForm.message.value.trim();
+
+    if (message === '') {
+      document.contactForm.message.classList.add('error');
+      errorMsg.innerHTML = '*Please enter a message.';
+      contactForm.message.focus();
+      return false;
     }
   };
 };
